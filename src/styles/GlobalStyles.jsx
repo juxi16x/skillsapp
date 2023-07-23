@@ -12,9 +12,22 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     #root {
-        width: 25rem;
+        width: 24rem;
         height: 40rem;
         border: 0.01rem solid gray;
         border-radius: 0.5rem;
+    }
+
+    .Link {
+        color: gray;
+        text-decoration: none;
+        padding: 10px;
+        background-color: white;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .Link:hover {
+        background-color: #b9b5b5;
     }
 `

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { styled } from "styled-components";
-import userData from '../../data/user';
+import React, { useContext, useEffect } from "react";
+import { Navigate } from "react-router-dom";
+import styled from 'styled-components';
+import { loginContext } from "../App";
 
 const Container = styled.div`
     display: flex;
@@ -54,13 +55,8 @@ const UserLevelCol = styled.div`
     font-weight: 700;
 `
 
-function Home() {
-    const [user, setUser] = useState(userData);
-
-    const getUserAge = () => {
-        const date = new Date().getFullYear();
-        return date - user.date;
-    }
+function Skills() {
+    const [user] = useContext(loginContext);
 
     return (
         <Container>
@@ -81,21 +77,11 @@ function Home() {
                 </UserDataContainer>
             </Block>
             <StyledHr/>
-            <Block style={{ color: "gray" }}>
-                <UserDataContainer>
-                    <UserDataCol>
-                        Name: {user.name}
-                    </UserDataCol>
-                    <UserDataCol>
-                        Country: {user.country}
-                    </UserDataCol>
-                    <UserDataCol>
-                        Age: {getUserAge()}
-                    </UserDataCol>
-                </UserDataContainer>
+            <Block>
+
             </Block>
         </Container>
     );
 }
 
-export default Home;
+export default Skills;

@@ -1,5 +1,5 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import React, { createContext, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components'
 import NavBar from './components/NavBar/navBar';
 import Home from './pages/Home';
@@ -13,31 +13,23 @@ const Container = styled.div`
     padding: 10px;
     height: 36rem;
 `
-export const loginContext = createContext();
+export const LoginContext = createContext();
 
 function App() {
-    const [ user, setUser ] = useState(userData);
-
-    useEffect(() => {
-        console.log('test');
-        if (user === null) {
-            Navigate("/login");
-        }
-    }, [user]);
+    const [user, setUser] = useState(userData);
 
     return (
         <>
-            <loginContext.Provider value={[user, setUser]}>
+            <LoginContext.Provider value={[user, setUser]}>
                 <Container>
                     <Routes>
-                        <Route path='/' element={<Home/>} />
-                        <Route path='/skills' element={<Skills/>} />
-                        <Route path='/login' />
+                        <Route path='/' element={<Home />} />
+                        <Route path='/skills' element={<Skills />} />
                         <Route path='*' element={<Error404 />} />
                     </Routes>
                 </Container>
-                <NavBar/>
-            </loginContext.Provider>
+                <NavBar />
+            </LoginContext.Provider>
         </>
     )
 }

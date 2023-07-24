@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { styled } from "styled-components";
-import { loginContext } from "../App";
+import { LoginContext } from "../App";
 
 const Container = styled.div`
     display: flex;
@@ -55,7 +55,7 @@ const UserLevelCol = styled.div`
 `
 
 function Home() {
-    const [user] = useContext(loginContext);
+    const [user] = useContext(LoginContext);
 
     const getUserAge = () => {
         const date = new Date().getFullYear();

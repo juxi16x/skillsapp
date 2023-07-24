@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from 'styled-components';
-import { loginContext } from "../App";
+import { LoginContext } from "../App";
 import ProgressBar from "../components/ProgressBar/progressBar";
 
 const Container = styled.div`
@@ -66,7 +66,7 @@ const StyledButton = styled.button`
 `
 
 function Skills() {
-    const [user] = useContext(loginContext);
+    const [user] = useContext(LoginContext);
     const [skills, setSkills] = useState(user.skills);
 
     const skillsPoinst = () => {
@@ -106,7 +106,7 @@ function Skills() {
                     </UserJobCol>
                 </UserDataContainer>
             </Block>
-            <StyledHr/>
+            <StyledHr />
             <Block>
                 <UserDataContainer>
                     <UserDataCol>
@@ -116,7 +116,7 @@ function Skills() {
                         return (
                             <UserDataCol>
                                 {skill.name}
-                                <ProgressBar progress={skill.level}/>
+                                <ProgressBar progress={skill.level} />
                                 <StyledButton onClick={() => handleClickPlusButton(skill.id)}>+</StyledButton>
                             </UserDataCol>
                         );

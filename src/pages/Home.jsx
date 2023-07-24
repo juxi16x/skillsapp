@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { styled } from "styled-components";
 import { loginContext } from "../App";
-import { Navigate } from "react-router-dom";
 
 const Container = styled.div`
     display: flex;

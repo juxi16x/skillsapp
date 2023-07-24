@@ -19,6 +19,7 @@ function App() {
     const [ user, setUser ] = useState(userData);
 
     useEffect(() => {
+        console.log('test');
         if (user === null) {
             Navigate("/login");
         }
@@ -29,8 +30,9 @@ function App() {
             <loginContext.Provider value={[user, setUser]}>
                 <Container>
                     <Routes>
-                        <Route path='/' element={<Home/>}/>
+                        <Route path='/' element={<Home/>} />
                         <Route path='/skills' element={<Skills/>} />
+                        <Route path='/login' />
                         <Route path='*' element={<Error404 />} />
                     </Routes>
                 </Container>

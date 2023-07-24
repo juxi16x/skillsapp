@@ -6,3 +6,9 @@
 <code>git clone https://github.com/juxi16x/skillsapp.git</code>
 <br/>
 <code>npm install && npm start</code>
+<h2>Tech stack</h2>
+<ul>
+<li>JavaScript</li>
+<li>React</li>
+<li>Styled Components</li>
+</ul>
